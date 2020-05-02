@@ -11,7 +11,7 @@ I won't dive in to details like how Gatsby works, I will mainly focus on getting
 
 ## What is Gatsby.js?
 
-[Gatsby.js](https://www.gatsbyjs.org/) is a free open source framework that help you create and develop websites using JAM stack (JavaScript, APIs, and Markup).
+[Gatsby.js](https://www.gatsbyjs.org/) is a free open source framework that help you create and develop websites using [JAMstack](https://jamstack.org/) (JavaScript, APIs and Markup).
 
 Gatsby is one of the most popular [static site generator](https://www.staticgen.com/) nowadays and what's really cool about it is that it uses JavaScript, GraphQL and React.
 
@@ -25,11 +25,15 @@ Now let's install getsby-cli
 npm install -g gatsby-cli
 ```
 
+
+
 Gatsby has many [starters template](https://www.gatsbyjs.org/starters/?v=2) to boostrap your project, I chose [gatsby-starter-delog](https://www.gatsbyjs.org/starters/W3Layouts/gatsby-starter-delog/) by [W3Layouts](https://github.com/W3Layouts)  because it is very slim, the UI looks good and it has a Netlify CMS integration.
 
 ```shell
 gatsby new gatsby-starter-delog https://github.com/W3Layouts/gatsby-starter-delog
 ```
+
+
 
 that will clone the repository to your computer, now you can just do:
 
@@ -39,11 +43,11 @@ gatsby develop
 ```
 
 \
-And you site will be up and running on <http://localhost:8000> !!!
+And you site will be up and running on <http://localhost:8000> 😎
 
 Let's save our blog now to GitHub:
 
-* Create a new repository on Github
+* Create a new repository on GitHub
 * push `my-new-blog` project
 
   ```shell
@@ -53,7 +57,7 @@ Let's save our blog now to GitHub:
 
 ## Hosting
 
-Gatsby has many hosting options: [Netlify](https://www.gatsbyjs.org/docs/deploying-to-netlify),[AWS Amplify](https://www.gatsbyjs.org/docs/deploying-to-aws-amplify),[GitHub Pages](https://www.gatsbyjs.org/docs/how-gatsby-works-with-github-pages/),[Surge.sh](https://www.gatsbyjs.org/docs/deploying-to-surge/),[Aerobatic](https://www.gatsbyjs.org/docs/deploying-to-aerobatic/),[ZEIT Now](https://www.gatsbyjs.org/docs/deploying-to-zeit-now/) and more.
+Gatsby has many hosting options: [Netlify](https://www.gatsbyjs.org/docs/deploying-to-netlify), [AWS Amplify](https://www.gatsbyjs.org/docs/deploying-to-aws-amplify), [GitHub Pages](https://www.gatsbyjs.org/docs/how-gatsby-works-with-github-pages/), [Surge.sh](https://www.gatsbyjs.org/docs/deploying-to-surge/), [Aerobatic](https://www.gatsbyjs.org/docs/deploying-to-aerobatic/), [ZEIT Now](https://www.gatsbyjs.org/docs/deploying-to-zeit-now/) and more.
 
 I chose [Netlify](https://www.netlify.com/) because of it's popularity and their generous [free tier plan](https://www.netlify.com/pricing/).
 
@@ -71,9 +75,9 @@ Your site it published on the web now 🎉🎉🎉
 
 This is optional, but you can purchase a domain name you like from a domain name registrar, I chose [GoDaddy](https://www.godaddy.com/) because of it's cheap prices and his good reputation.
 
-To setup your domain name in Netlify:
+To setup your domain name on Netlify:
 
-go to your site dashborad on Netlify -> Domain management -> Add custom domain
+Go to your site dashboard on Netlify -> Domain management -> Add custom domain
 
 Ok now we have a shiny new blog website with some basic template data, let's start customising it with our blog posts content with Netlify CMS.
 
@@ -81,9 +85,9 @@ Ok now we have a shiny new blog website with some basic template data, let's sta
 
 First, change the repo name in `static/admin/config.yml` to yours: `your-username/my-new-blog`
 
-commit and push it to master
+Commit and push it to master.
 
-Create GitHub OAuth Client ID:
+Go to GitHub and create OAuth Client ID:
 
 * Settings -> Developer settings -> OAuth Apps -> Register a new application
 * Fill in the next fields
@@ -92,9 +96,9 @@ Create GitHub OAuth Client ID:
   * Homepage URL: your app domain name
   * Authorization callback URL: `https://api.netlify.com/auth/done`
 
-You will get a ClientID and a secret, save them because you will use them next
+You will get a ClientID and a secret, save them because you will use them next.
 
-In Netlify go to your site dashboard -> Access Control -> Install provider
+Go back to Netlify -> go to your site dashboard -> Access Control -> Install provider
 
 Select GitHub and add the ClientID and secret.
 
