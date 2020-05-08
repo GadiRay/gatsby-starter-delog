@@ -1,13 +1,15 @@
 import React from "react"
 import Helmet from 'react-helmet';
 import { graphql } from "gatsby"
+import { SocialIcon } from 'react-social-icons';
 import Layout from "../components/layout"
 
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
 }) {
-  const { markdownRemark } = data // data.markdownRemark holds your post data
+  const { markdownRemark, site } = data // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark
+  const postUrl = `${site.siteMetadata.siteUrl}${frontmatter.path}`;
   return (
     <Layout>
       <Helmet>
@@ -34,6 +36,20 @@ export default function Template({
             dangerouslySetInnerHTML={{ __html: html }}
           />
         </article>
+        <div className="share-posts">
+          <div className="share-description">
+            If you liked this post, feel free to share it:
+          </div>
+          <div className="social-icons">
+            <SocialIcon network="twitter" url={`https://twitter.com/intent/tweet?text=${encodeURI(frontmatter.title)}%20by%20%40gadiray%20${postUrl}`} />
+            <SocialIcon network="linkedin" url={`https://www.linkedin.com/shareArticle?mini=true&url=${postUrl}&title=${encodeURI(frontmatter.title)}`} />
+            <SocialIcon network="facebook" url={`https://www.facebook.com/sharer.php?u=${postUrl}`} />
+            <SocialIcon network="reddit" url={`https://www.reddit.com/submit?url=${postUrl}&title=${encodeURI(frontmatter.title)}`} />
+          </div>
+          {/* <TwitterShareButton url={`${encodeURI(frontmatter.title)}`} >
+            <TwitterIcon size={32} round />
+          </TwitterShareButton> */}
+        </div>
       </div>
     </Layout>
   )
@@ -41,6 +57,11 @@ export default function Template({
 
 export const pageQuery = graphql`
   query($path: String!) {
+    site {
+      siteMetadata {
+        siteUrl
+      }
+    }
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
       frontmatter {

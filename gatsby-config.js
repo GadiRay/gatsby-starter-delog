@@ -9,7 +9,7 @@ module.exports = {
   siteMetadata: {
     title: `Gadi's blog`,
     description: `My tech blog`,
-    siteUrl: `https://admiring-wilson-7f04db.netlify.app/`,
+    siteUrl: `https://admiring-wilson-7f04db.netlify.app`,
     home: {
       title: `Welcome to my blog!`,
       description: `You can reach me at:`,

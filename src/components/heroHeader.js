@@ -22,10 +22,10 @@ export default () => (
           <p>{data.site.siteMetadata.home.description}</p>
         </div>
         <div className="social-icons">
-        <SocialIcon network="twitter" url="https://twitter.com/gadiray" />
-        <SocialIcon network="github" url="https://github.com/GadiRay" bgColor="#000000"/>
-        <SocialIcon network="linkedin" url="https://www.linkedin.com/in/gadi-raymond-8646b85a/" />
-        <SocialIcon network="email" url="mailto:gadiraymond@gmail.com" />
+          <SocialIcon network="twitter" url="https://twitter.com/gadiray" />
+          <SocialIcon network="github" url="https://github.com/GadiRay" bgColor="#7f7f7f"/>
+          <SocialIcon network="linkedin" url="https://www.linkedin.com/in/gadi-raymond-8646b85a/" />
+          <SocialIcon network="email" url="mailto:gadiraymond@gmail.com" />
         </div>
       </div>
     )}
