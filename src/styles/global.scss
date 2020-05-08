@@ -148,6 +148,12 @@ a {
   line-height: 1.5;
   font-weight: 300;
 }
+.social-icons {
+  max-width: 200px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-column-gap: 1em
+}
 .post {
   padding: 0;
   background:var(--background);

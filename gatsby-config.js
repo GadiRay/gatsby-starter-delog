@@ -11,8 +11,8 @@ module.exports = {
     description: `My tech blog`,
     siteUrl: `https://admiring-wilson-7f04db.netlify.app/`,
     home: {
-      title: `Hi! I'm Gadi`,
-      description: `This is my blog`,
+      title: `Welcome to my blog!`,
+      description: `You can reach me at:`,
     },
     /* W3Layouts domain verification key for contact forms https://my.w3layouts.com/Forms/ */
     w3l_dom_key: `5e609f7a2d23fCF_Domain_verify` 
