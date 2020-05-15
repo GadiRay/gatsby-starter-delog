@@ -35,21 +35,18 @@ export default function Template({
             className="blog-post-content"
             dangerouslySetInnerHTML={{ __html: html }}
           />
+          <div className="blog-post-content share-posts">
+            <p className="share-description">
+              If you liked this post, feel free to share it:
+            </p>
+            <div className="social-icons">
+              <SocialIcon network="twitter" url={`https://twitter.com/intent/tweet?text=${encodeURI(frontmatter.title)}%20by%20%40gadiray%20${postUrl}`} />
+              <SocialIcon network="linkedin" url={`https://www.linkedin.com/shareArticle?mini=true&url=${postUrl}&title=${encodeURI(frontmatter.title)}`} />
+              <SocialIcon network="facebook" url={`https://www.facebook.com/sharer.php?u=${postUrl}`} />
+              <SocialIcon network="reddit" url={`https://www.reddit.com/submit?url=${postUrl}&title=${encodeURI(frontmatter.title)}`} />
+            </div>
+          </div>
         </article>
-        <div className="share-posts">
-          <div className="share-description">
-            If you liked this post, feel free to share it:
-          </div>
-          <div className="social-icons">
-            <SocialIcon network="twitter" url={`https://twitter.com/intent/tweet?text=${encodeURI(frontmatter.title)}%20by%20%40gadiray%20${postUrl}`} />
-            <SocialIcon network="linkedin" url={`https://www.linkedin.com/shareArticle?mini=true&url=${postUrl}&title=${encodeURI(frontmatter.title)}`} />
-            <SocialIcon network="facebook" url={`https://www.facebook.com/sharer.php?u=${postUrl}`} />
-            <SocialIcon network="reddit" url={`https://www.reddit.com/submit?url=${postUrl}&title=${encodeURI(frontmatter.title)}`} />
-          </div>
-          {/* <TwitterShareButton url={`${encodeURI(frontmatter.title)}`} >
-            <TwitterIcon size={32} round />
-          </TwitterShareButton> */}
-        </div>
       </div>
     </Layout>
   )
